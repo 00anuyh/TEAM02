@@ -1,0 +1,184 @@
+.besttitle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.besttitle .titleleft,
+.besttitle .titleright {
+    width: 40%;
+    height: 2px;
+    background-color: #5E472F;
+}
+
+.besttitle h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: "Playfair Display", serif;
+}
+
+/* 배너 */
+.bestBanner {
+    width: 100%;
+    height: 700px;
+    margin-top: 20px;
+}
+
+.bestBanner .swiper,
+.bestBanner .swiper-wrapper,
+.bestBanner .swiper-slide {
+    height: 100%;
+}
+
+.bestBanner .swiper-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+.bestBanner .swiper-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .35));
+}
+
+.bestBanner .swiper-slide span,
+.bestBanner .swiper-slide p {
+    position: relative;
+    /* right: 50px;
+    top: -30px; */
+    z-index: 1;
+}
+
+.bestBanner .swiper-slide span {
+    font: 700 1.4rem "Playfair Display", serif;
+    letter-spacing: .5px;
+}
+
+.bestBanner .swiper-slide p {
+    margin: 10px 20px 0 0;
+    font: 400 1rem;
+    opacity: .95;
+}
+
+/* 배경이미지 */
+.bstimg1 {
+    background-image: url("/public/img/Best_img1.png");
+}
+
+.bstimg2 {
+    background-image: url("/public/img/Best_img2.png");
+}
+
+.bstimg3 {
+    background-image: url("/public/img/Best_img3.png");
+}
+
+.bstimg4 {
+    background-image: url("/public/img/Best_img4.png");
+}
+
+
+/* 페이지네이션 커스터마이즈 */
+.bestBanner .swiper-pagination {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+/* 점 → 막대(ㅡ) 모양 */
+.bestBanner .swiper-pagination-bullet {
+    width: 32px;
+    height: 3px;
+    margin: 0 6px;
+    border-radius: 2px;
+    background: #fff;
+    opacity: 0.5;
+    transition: all .3s;
+}
+
+.bestBanner .swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+    transform: scaleX(1.2);
+}
+
+.rank-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .65);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-card {
+    position: relative;
+}
+
+/* 부모 카드가 가려버리지 않도록 */
+.product-card {
+    position: relative;
+    overflow: visible;
+}
+
+/* 리본 배지 */
+.rank-badge {
+    --badge-color: #B07B51;
+    /* 필요하면 컬러만 바꿔 쓰세요 */
+    position: absolute;
+    top: 0;
+    left: 6px;
+    z-index: 3;
+
+    width: 24px;
+    /* 숫자 두 자리면 28~32px로 늘리세요 */
+    height: 28px;
+    background: var(--badge-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 28px;
+    /* 세로 가운데 정렬 */
+    text-align: center;
+    border-radius: 0 0;
+}
+
+/* 아랫부분 삼각 컷 */
+.rank-badge::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    /* 삼각형 높이만큼 아래로 */
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    /* width의 절반 값 */
+    border-right: 12px solid transparent;
+    border-top: 6px solid var(--badge-color);
+    /* 배경색과 동일 */
+}
